@@ -12,3 +12,7 @@ The C file name will be saved in the variable $CFILE. The output file should be 
 6. The 5-printf.c source code prints exactly with proper grammar, but the outcome is a piece of art,, followed by a new line.
 
 7. The 6-size.c source code prints the size of various types on the computer it is compiled and run on.
+
+8. The 100-intel script generates the assembly code (Intel syntax) of a C code and save it in an output file.
+
+9. The 101-quote.c source code prints exactly and that piece of art is useful" - Dora Korpar, 2015-10-19, followed by a new line, to the standard error.
