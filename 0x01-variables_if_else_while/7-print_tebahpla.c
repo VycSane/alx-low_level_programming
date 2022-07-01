@@ -8,11 +8,11 @@
  */
 int main(void)
 {
-	int count;
+	int lowercase;
 
-	for (count = '0'; count <= '9'; count++)
+	for (lowercase = 'z'; lowercase >= 'a'; --lowercase)
 	{
-		putchar(count);
+		putchar(lowercase);
 	}
 	putchar('\n');
 	return (0);
