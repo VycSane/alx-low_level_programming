@@ -18,15 +18,18 @@ int main(void)
 			{
 				for (l = '1'; l <= '9'; ++l)
 				{
+					if ((k >= i && l >= j) && !(i == k && j == l))
+					{
 					putchar(i);
 					putchar(j);
 					putchar(' ');
 					putchar(k);
 					putchar(l);
-					if (i == '9' && j == '9' && k == '9' && l == '9')
+					if (i == '9' && j == '8' && k == '9' && l == '9')
 						continue;
 					putchar(',');
 					putchar(' ');
+					}
 				}
 			}
 		}
