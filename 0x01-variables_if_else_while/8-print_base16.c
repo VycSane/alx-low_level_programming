@@ -15,7 +15,7 @@ int main(void)
 	{
 		putchar(hex_num);
 	}
-	for (hex_letter = 'a'; hex_letter <= 'e'; ++hex_letter)
+	for (hex_letter = 'a'; hex_letter <= 'f'; ++hex_letter)
 	{
 		putchar(hex_letter);
 	}
