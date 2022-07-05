@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -8,7 +9,7 @@ void jack_bauer(void)
 {
 	char i, j, k, l;
 
-	for (i = '0', i <= '2', ++i)
+	for (i = '0'; i <= '2'; ++i)
 	{
 		for (j = '0'; j <= '9'; ++j)
 		{
@@ -23,7 +24,7 @@ void jack_bauer(void)
 					_putchar(l);
 					_putchar('\n');
 					if (i == '2' && j == '3' && k == '5' && l == '9')
-						break;
+						exit(0);
 				}
 			}
 		}
