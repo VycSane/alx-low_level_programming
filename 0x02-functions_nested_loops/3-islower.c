@@ -2,10 +2,10 @@
 #include "main.h"
 
 /**
- * _islower - Entry point
- * Takes a character as argument
- * Return: 0 if argument is lowercase
- * Return: 1 if argument is not lowercase
+ * _islower - checks if argument is lowercase
+ * @c: The character to be tested
+ *
+ * Return: 0 if argument is lowercase and 1 if not a lowercase.
  */
 int _islower(int c)
 {
