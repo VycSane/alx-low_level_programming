@@ -16,7 +16,7 @@ int main(void)
 	{
 		sum = num1 + num2;
 		printf("%.0Lf", sum);
-		if (i == 50)
+		if (i == 49)
 		{
 			printf("\n");
 			break;
