@@ -18,7 +18,7 @@ void print_times_table(int n)
 			{
 				_putchar('0');
 			}
-			else if (i * j < 9)
+			else if (i * j <= 9)
 			{
 				_putchar(' ');
 				_putchar(' ');
