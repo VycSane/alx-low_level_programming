@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 /**
  * main - Entry point
@@ -14,7 +15,7 @@ int main(void)
 	for (i = 0; i < 98; i++)
 	{
 		sum = num1 + num2;
-		printf("%.0Lf", sum);
+		printf("%f", round(sum));
 		if (i == 97)
 		{
 			printf("\n");
