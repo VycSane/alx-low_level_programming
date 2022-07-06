@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	unsigned long long int sum = 0, num1 = 0, num2 = 1, total = 0;
+	long long int sum = 0, num1 = 0, num2 = 1, total = 0;
 
 	while (1)
 	{
