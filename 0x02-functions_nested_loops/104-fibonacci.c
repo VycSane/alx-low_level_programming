@@ -11,15 +11,19 @@ int main(void)
 
 	long double sum = 0, num1 = 0, num2 = 1;
 
-	for (i = 0; i < 98; i++)
+	while (1)
 	{
 		sum = num1 + num2;
 		printf("%.0Lf", sum);
 		if (i == 97)
+		{
 			printf("\n");
+			break;
+		}
 		printf(", ");
 		num1 = num2;
 		num2 = sum;
+		i++;
 	}
 	return (0);
 }
