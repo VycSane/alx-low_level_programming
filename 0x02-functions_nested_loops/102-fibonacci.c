@@ -9,9 +9,10 @@
 int main(void)
 {
 	int i;
+
 	long double sum = 0, num1 = 0, num2 = 1;
 
-	for (i = 1; i <= 50; i++)
+	for (i = 0; i < 50; i++)
 	{
 		sum = num1 + num2;
 		printf("%.0Lf", sum);
