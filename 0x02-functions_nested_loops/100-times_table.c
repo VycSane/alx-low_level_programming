@@ -18,14 +18,16 @@ void print_times_table(int n)
 			{
 				_putchar('0');
 			}
-			else if (i * j > n)
+			else if (i * j > 9)
 			{
+				_putchar(' ');
 				_putchar(' ');
 				_putchar('0' + (i * j) / 10);
 				_putchar('0' + (i * j) % 10);
 			}
 			else
 			{
+				_putchar(' ');
 				_putchar(' ');
 				_putchar(' ');
 				_putchar('0' + i * j);
