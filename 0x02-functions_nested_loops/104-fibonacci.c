@@ -14,12 +14,9 @@ int main(void)
 	for (i = 0; i < 98; i++)
 	{
 		sum = num1 + num2;
-		printf("%Lf", sum);
+		printf("%.0Lf", sum);
 		if (i == 97)
-		{
 			printf("\n");
-			break;
-		}
 		printf(", ");
 		num1 = num2;
 		num2 = sum;
