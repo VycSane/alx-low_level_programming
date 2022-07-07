@@ -9,7 +9,7 @@ int main(void)
 {
 	int i = 0;
 	unsigned int pf = 2u;
-	long long int n = 612852475143;
+	long int n = 612852475143;
 
 	while (1)
 	{
