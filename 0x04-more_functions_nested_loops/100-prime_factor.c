@@ -8,7 +8,7 @@
 int main(void)
 {
 	int i = 0;
-	unsigned pf = 2u;	
+	unsigned int pf = 2u;
 	long long int n = 612852475143;
 
 	while (1)
