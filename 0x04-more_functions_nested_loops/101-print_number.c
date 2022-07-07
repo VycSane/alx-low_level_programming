@@ -29,11 +29,10 @@ void print_number(int n)
 			checker = n / start;
 			if (checker == 0)
 				break;
-			else
-				start *= 10;
+			start *= 10;
 		}
 		if (negative)
-                                _putchar('-');
+			_putchar('-');
 		for (j = start; j > 1; j /= 10)
 		{
 			_putchar('0' + ((n * 10 / j) % 10));
