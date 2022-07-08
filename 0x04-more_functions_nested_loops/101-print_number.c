@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 #include "main.h"
 
 /**
@@ -12,6 +13,7 @@ void print_number(int n)
 	size_t start = 10;
 	int checker = -1;
 	int negative = 0;
+	int int_min = 0;
 
 	if (n == 0)
 	{
@@ -22,7 +24,15 @@ void print_number(int n)
 		if (n < 0)
 		{
 			negative = 1;
-			n = -n;
+			if (n == INT_MIN)
+			{
+				n = INT_MAX;
+				int_min = 1;
+			}
+			else
+			{
+				n = -n;
+			}
 		}
 		while (1)
 		{
@@ -35,7 +45,14 @@ void print_number(int n)
 			_putchar('-');
 		for (j = start; j > 1; j /= 10)
 		{
-			_putchar('0' + ((unsigned int) (n * ((double) 10 / j)) % 10));
+			if (int_min == 1 && j <= 10)
+			{
+				_putchar('1' + ((unsigned int) (n * ((double) 10 / j)) % 10));
+			}
+			else
+			{
+				_putchar('0' + ((unsigned int) (n * ((double) 10 / j)) % 10));
+			}
 		}
 	}
 }
