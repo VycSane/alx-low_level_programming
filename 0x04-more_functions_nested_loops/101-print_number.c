@@ -7,9 +7,9 @@
  */
 void print_number(int n)
 {
-	int j;
+	size_t j;
 
-	int start = 10;
+	size_t start = 10;
 	int checker = -1;
 	int negative = 0;
 
@@ -35,7 +35,7 @@ void print_number(int n)
 			_putchar('-');
 		for (j = start; j > 1; j /= 10)
 		{
-			_putchar('0' + ((n * 10 / j) % 10));
+			_putchar('0' + ((unsigned int) (n * ((double) 10 / j)) % 10));
 		}
 	}
 }
