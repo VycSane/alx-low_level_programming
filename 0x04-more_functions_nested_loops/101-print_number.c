@@ -8,12 +8,8 @@
  */
 void print_number(int n)
 {
-	size_t j;
-
-	size_t start = 10;
-	int checker = -1;
-	int negative = 0;
-	int int_min = 0;
+	size_t j, start = 10;
+	int checker = -1, negative = 0, int_min = 0;
 
 	if (n == 0)
 	{
@@ -46,13 +42,9 @@ void print_number(int n)
 		for (j = start; j > 1; j /= 10)
 		{
 			if (int_min == 1 && j <= 10)
-			{
 				_putchar('1' + ((unsigned int) (n * ((double) 10 / j)) % 10));
-			}
 			else
-			{
 				_putchar('0' + ((unsigned int) (n * ((double) 10 / j)) % 10));
-			}
 		}
 	}
 }
