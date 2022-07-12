@@ -26,8 +26,6 @@ int _atoi(char *s)
 		{
 			res = res * 10 + s[i] - '0';
 			start = 1;
-			if (sign == -1 && s[i - 1] == ' ')
-				sign = 1;
 		}
 		else
 		{
