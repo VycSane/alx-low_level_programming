@@ -11,7 +11,10 @@ int main(void)
 {
 	int pwd;
 
-	pwd = rand();
-	printf("%d\n", pwd);
+	while (1)
+	{
+		pwd = rand();
+		printf("%d", pwd);
+	}
 	return (0);
 }
