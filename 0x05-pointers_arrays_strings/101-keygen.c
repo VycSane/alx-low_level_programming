@@ -9,8 +9,10 @@
  */
 int main(void)
 {
+	int password;
+
 	srand(time(NULL));
-	int password = rand();
+	password = rand();
 	printf("%d\n", password);
 	return (password);
 }
