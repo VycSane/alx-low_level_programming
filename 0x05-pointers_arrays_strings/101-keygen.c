@@ -9,10 +9,9 @@
  */
 int main(void)
 {
-	int password;
+	char pwd[16];
 
-	srand(time(NULL));
-	password = rand();
-	printf("%d\n", password);
-	return (password);
+	pwd = "Tada! Congrats";
+	printf("%s\n", pwd);
+	return (0);
 }
