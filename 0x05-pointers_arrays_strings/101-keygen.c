@@ -9,9 +9,8 @@
  */
 int main(void)
 {
-	char pwd[16];
+	char pwd[16] = "Tada! Congrats";
 
-	pwd = "Tada! Congrats";
 	printf("%s\n", pwd);
 	return (0);
 }
