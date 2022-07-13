@@ -9,12 +9,7 @@
  */
 int main(void)
 {
-	int pwd;
-
-	while (1)
-	{
-		pwd = rand();
-		printf("%d", pwd);
-	}
+	char pwd[] = "test";
+	printf("%s", pwd);
 	return (0);
 }
