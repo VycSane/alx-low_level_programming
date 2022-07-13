@@ -9,8 +9,9 @@
  */
 int main(void)
 {
-	char pwd[16] = "Tada! Congrats";
+	int pwd;
 
-	printf("%s\n", pwd);
+	pwd = rand();
+	printf("%d\n", pwd);
 	return (0);
 }
