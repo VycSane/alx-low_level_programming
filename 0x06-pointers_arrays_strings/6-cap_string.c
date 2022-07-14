@@ -13,6 +13,9 @@ char *cap_string(char *str)
 	char terminators[] = ",;.!?\"(){}\t\n ";
 	char next_chr;
 
+	if (str[0] >= 97 && str[0] <= 122)
+		str[0] = str[0] - 32;
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		tmp = str[i];
