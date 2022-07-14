@@ -13,6 +13,12 @@
 char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
+	size_t src_end;
+
+	src_end = strlen(src);
+
+	if ((size_t) n > src_end)
+		n = src_end;
 
 	for (i = 0; i < n; i++)
 	{
