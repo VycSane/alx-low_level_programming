@@ -17,7 +17,7 @@ char *rot13(char *str)
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		tmp = str[i];
-		for (j = 0; j < strlen(key); j++)
+		for (j = 0; (size_t) j < strlen(key); j++)
 		{
 			if (tmp == key[j])
 				str[i] = value[j];
