@@ -11,7 +11,6 @@
 char *_strcat(char *dest, char *src)
 {
 	size_t i, src_end, dest_end;
-	char c;
 
 	src_end = strlen(src);
 	dest_end = strlen(dest);
