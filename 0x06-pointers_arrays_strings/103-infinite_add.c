@@ -32,7 +32,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	{
 		d1 = i >= 0 ? n1[i] - '0' : 0;
 		d2 = j >= 0 ? n2[j] - '0' : 0;
-		
 		sum = d1 + d2 + carry;
 		r[k] = (sum % 10) + 48;
 		carry = sum / 10;
