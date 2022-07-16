@@ -11,7 +11,7 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int d1, d2, sum;
+	int d1, d2, sum, n;
 
 	int i = (int) strlen(n1) - 1;
 	int j = (int) strlen(n2) - 1;
@@ -20,12 +20,19 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	if (size_r <= k + 1)
 		return (0);
-	r[k + 1] = '\0';
+
+	n = k + 1;
+	while (n < size_r)
+	{
+		r[n] = '\0';
+		n++;
+	}
 
 	while (i >= 0 || j >= 0)
 	{
 		d1 = i >= 0 ? n1[i] - '0' : 0;
 		d2 = j >= 0 ? n2[j] - '0' : 0;
+		
 		sum = d1 + d2 + carry;
 		r[k] = (sum % 10) + 48;
 		carry = sum / 10;
