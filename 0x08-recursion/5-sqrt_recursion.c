@@ -9,7 +9,7 @@ int _sqrt_recursion(int n)
 {
 	int a = 0, b = n;
 
-	if (n <= 1)
+	if (n < 0)
 		return (-1);
 	return (is_sqrt(&a, &b, n));
 }
