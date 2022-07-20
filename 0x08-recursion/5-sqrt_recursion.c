@@ -1,3 +1,4 @@
+#include <stddef.h>
 int is_sqrt(int *a, int *b, int n);
 /**
  * _sqrt_recursion - returns the natural root of a number.
@@ -26,21 +27,21 @@ int _sqrt_recursion(int n)
  */
 int is_sqrt(int *a, int *b, int n)
 {
-	int m = (*a + *b) / 2;
+	size_t m = (*a + *b) / 2;
 
-	if (*a >= m)
+	if ((size_t) *a >= m)
 		return (-1);
-	if (m * m == n)
+	if (m * m == (size_t) n)
 		return (m);
-	if (m * m > n)
+	if (m * m > (size_t) n)
 	{
-		*b = m;
+		*b = (int) m;
 		return (is_sqrt(a, b, n));
 	}
-	if (m * m < n)
+	if (m * m < (size_t) n)
 	{
-		*a = m;
+		*a = (int) m;
 		return (is_sqrt(a, b, n));
 	}
-	return (m);
+	return ((int) m);
 }
