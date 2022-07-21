@@ -36,7 +36,6 @@ int cmp(int *i, int *j, int *ts, char *s1, char *s2)
 	}
 	if (s1[*i] == s2[*j])
 	{
-		*ts = 0;
 		*i = *i + 1, *j = *j + 1;
 		return (cmp(i, j, ts, s1, s2));
 	}
