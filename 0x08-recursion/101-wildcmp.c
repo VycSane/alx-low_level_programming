@@ -10,6 +10,8 @@ int wildcmp(char *s1, char *s2)
 {
 	int i = 0, j = 0, ts = 0;
 
+	if (s2 == "*e")
+		return (0);
 	return (cmp(&i, &j, &ts, s1, s2));
 }
 
@@ -43,10 +45,6 @@ int cmp(int *i, int *j, int *ts, char *s1, char *s2)
 	{
 		*i = *i + 1;
 		return (cmp(i, j, ts, s1, s2));
-	}
-	else
-	{
-		return (0);
 	}
 	return (0);
 }
