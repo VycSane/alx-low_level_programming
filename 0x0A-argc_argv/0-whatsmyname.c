@@ -6,7 +6,7 @@
  *
  * Return: 0 on Success
  */
-int main(__attribute__((unused)) int argc, char* argv[])
+int main(__attribute__((unused)) int argc, char *argv[])
 {
 	int i = 0;
 	char *str = argv[0];

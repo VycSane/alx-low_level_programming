@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - Entry point
  * @argc: number of commandline args
@@ -8,12 +9,19 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 0;
+	int i = 1, sum = 0, num;
 
 	while (i < argc)
 	{
-		printf("%s\n", argv[i]);
+		num = atoi(argv[i]);
+		if (num == 0 && argv[i][0] != '0')
+		{
+			printf("Error\n");
+			return (1);
+		}
+		sum += num;
 		i++;
 	}
+	printf("%d\n", sum);
 	return (0);
 }
