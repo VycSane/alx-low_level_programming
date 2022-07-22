@@ -11,6 +11,12 @@ int main(int argc, char *argv[])
 {
 	int i = 1, sum = 0, num;
 
+	if (argc == 1)
+	{
+		printf("%d\n", 0);
+		return (1);
+	}
+
 	while (i < argc)
 	{
 		num = atoi(argv[i]);
