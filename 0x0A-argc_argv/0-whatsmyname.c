@@ -1,5 +1,4 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
  * main - Entry point
  * @argc: number of commandline args
@@ -9,6 +8,14 @@
  */
 int main(__attribute__((unused)) int argc, char* argv[])
 {
-	printf("%s\n", argv[0]);
+	int i = 0;
+	char *str = argv[0];
+
+	while (str[i] != '\0')
+	{
+		_putchar(str[i]);
+		i++;
+	}
+	_putchar('\n');
 	return (0);
 }
