@@ -59,6 +59,12 @@ char **strtow(char *str)
 			width++;
 		i++;
 	}
+	cpp[j] = (char *)malloc(sizeof(NULL));
+	if (cpp[j] == NULL)
+	{
+		free(cp);
+		cp = NULL;
+	}
 	cpp[j] = NULL;
 	free(cp);
 	cp = NULL;
