@@ -25,12 +25,12 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	while (i < len1 || j < len2)
 	{
-		if (s1[i] != '\0')
+		if (i < len1)
 		{
 			cp[i] = s1[i];
 			i++;
 		}
-		if (s2[i] != '\0')
+		if (j < len2)
 		{
 			cp[len1 + j] = s2[j];
 			j++;
