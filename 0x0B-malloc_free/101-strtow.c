@@ -15,7 +15,7 @@ char **strtow(char *str)
 	char **cpp;
 	size_t i = 0, j = 0, k = 0, l = 0, count = 1, width = 0, len;
 
-	if (str == NULL || str == "")
+	if (str || str == "")
 		return (NULL);
 	cp = trim(str);
 	len = strlen(cp);
@@ -72,7 +72,7 @@ char **strtow(char *str)
  */
 char *trim(char *str)
 {
-	size_t start = 0, stop = 0, i = 0, j = 0, len = strlen(str);
+	size_t start = 0, i = 0, j = 0, len = strlen(str);
 	char *cp = (char *)malloc(sizeof(char) * (len + 1));
 
 	if (cp == NULL)
