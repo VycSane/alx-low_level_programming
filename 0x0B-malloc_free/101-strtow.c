@@ -15,7 +15,7 @@ char **strtow(char *str)
 	char **cpp;
 	size_t i = 0, j = 0, k = 0, l = 0, count = 1, width = 0, len;
 
-	if (str || str == "")
+	if (str || str[0] == '\0')
 		return (NULL);
 	cp = trim(str);
 	len = strlen(cp);
