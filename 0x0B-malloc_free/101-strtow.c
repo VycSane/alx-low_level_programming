@@ -59,7 +59,7 @@ char **strtow(char *str)
 			width++;
 		i++;
 	}
-	cpp[j] = (char *)malloc(sizeof(NULL));
+	cpp[j] = (char *)malloc(sizeof(char));
 	if (cpp[j] == NULL)
 	{
 		free(cp);
