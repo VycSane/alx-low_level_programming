@@ -2,13 +2,13 @@
 #include <stddef.h>
 #include <string.h>
 /**
- * _str_concat - concatenates a string
+ * str_concat - concatenates a string
  * @s1: first string arg
  * @s2: second string arg
  *
  * Return: a pointer to the new concatenated string or NULL.
  */
-char *_str_concat(char *s1, char *s2)
+char *str_concat(char *s1, char *s2)
 {
 	char *cp;
 	size_t i = 0, j = 0, len1, len2;
