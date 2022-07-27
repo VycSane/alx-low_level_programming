@@ -32,7 +32,7 @@ char **strtow(char *str)
 	i = 0;
 	while (i <= len)
 	{
-		if (cp[i] == ' ' || (i == len && cp[i] != ' '))
+		if (cp[i] == ' ')
 		{
 			cpp[j] = (char *)malloc(sizeof(char) * (width + 1));
 			if (cpp[j] == NULL)
