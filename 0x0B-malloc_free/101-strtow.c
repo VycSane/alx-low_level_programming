@@ -22,6 +22,21 @@ char **strtow(char *str)
 
 	while (i < len)
 	{
+		if (i == len - 1)
+			return (NULL);
+		if (str[i] == ' ')
+		{
+			i++;
+			continue;
+		}
+		else
+		{
+			break;
+		}
+	}
+	i = 0;
+	while (i < len)
+	{
 		if (cp[i] == ' ')
 			count += 1;
 		i++;
