@@ -32,7 +32,7 @@ char **strtow(char *str)
 	i = 0;
 	while (i <= len)
 	{
-		if (cp[i] == ' ')
+		if (cp[i] == ' ' || (i == len && cp[i] != ' '))
 		{
 			cpp[j] = (char *)malloc(sizeof(char) * (width + 1));
 			if (cpp[j] == NULL)
@@ -79,6 +79,7 @@ char **strtow(char *str)
 char *trim(char *str)
 {
 	size_t start = 0, i = 0, j = 0, len = strlen(str);
+	size_t nft = 0, sp = 0, ps = 0;
 	char *cp = (char *)malloc(sizeof(char) * (len + 1));
 
 	if (cp == NULL)
@@ -86,18 +87,34 @@ char *trim(char *str)
 	while (i < len)
 	{
 		if (str[i] != ' ')
+		{
 			start = 1;
+			nft = 1;
+			if (sp)
+			{
+				ps = 1;
+				sp = 0;
+			}
+		}
 		else
+		{
 			start = 0;
+			if (nft)
+			{
+				sp = 1;
+				nft = 0;
+			}
+		}
 		if (start)
 		{
-			cp[j] = str[i];
-			j++;
-			if (str[i + 1] == ' ')
+			if (ps)
 			{
 				cp[j] = ' ';
 				j++;
+				ps = 0;
 			}
+			cp[j] = str[i];
+			j++;
 		}
 		i++;
 	}
