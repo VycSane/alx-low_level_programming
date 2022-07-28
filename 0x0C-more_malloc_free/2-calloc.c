@@ -1,3 +1,4 @@
+#include <string.h>
 #include <stdlib.h>
 #include <stddef.h>
 /**
@@ -19,7 +20,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	while (i < nmemb)
 	{
-		((unsigned char*)vp)[i] = 0;
+		memset(vp, 0, (nmemb * size));
 		i++;
 	}
 	return (vp);
