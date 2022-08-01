@@ -8,7 +8,8 @@
  *
  * Description: The dog structure creates a dog data type.
  */
-struct dog {
+struct dog
+{
 	char *name;
 	float age;
 	char *owner;
