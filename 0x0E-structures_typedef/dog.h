@@ -1,5 +1,13 @@
 #ifndef DOG_H
 #define DOG_H
+/**
+ * struct dog - creates a dog structure
+ * @name: dog's name
+ * @age: dog's age
+ * @owner: dog's owner
+ *
+ * Description: The dog structure creates a dog data type.
+ */
 struct dog {
 	char *name;
 	float age;
