@@ -21,8 +21,6 @@ int (*get_op_func(char *s))(int, int)
 
 	if (s[0] == (ops[i].op)[0])
 		return (ops[i].f);
-	else if (ops[i].op == NULL)
-		return (NULL);
 	i++;
 	return (get_op_func(s));
 }
