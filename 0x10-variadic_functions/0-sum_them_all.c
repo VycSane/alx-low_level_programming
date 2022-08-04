@@ -19,7 +19,7 @@ int sum_them_all(const unsigned int n, ...)
 	{
 		value = va_arg(args, int);
 		if (!value && value != 0)
-			return (0);
+			return (sum += value);
 		sum += value;
 		i++;
 	}
