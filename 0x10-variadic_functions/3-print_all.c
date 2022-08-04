@@ -10,7 +10,7 @@
  */
 void print_all(const char * const format, ...)
 {
-	int n = (int) strlen(format), i = 0, var_int, int is_valid = 0;
+	int n = (int) strlen(format), i = 0, var_int, is_valid = 0;
 	char var_char, *var_str, f;
 	float var_float;
 	va_list args;
