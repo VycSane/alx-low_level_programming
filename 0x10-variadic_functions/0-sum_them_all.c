@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdlib.h>
 /**
  * sum_them_all - sums up the value of variable number of args.
  * @n: number of args to be passed
@@ -19,7 +20,7 @@ int sum_them_all(const unsigned int n, ...)
 	{
 		value = va_arg(args, int);
 		if (!value && value != 0)
-			return (sum += value);
+			exit(0);
 		sum += value;
 		i++;
 	}
