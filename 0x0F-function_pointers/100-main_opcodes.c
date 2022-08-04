@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stddef.h>
+#include <string.h>
 /**
  * main - Entry point
  * @argc: number of commandline args
@@ -11,6 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int n;
+	char str[200];
 
 	if (argc != 2)
 	{
@@ -23,7 +25,9 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	};
+	strcpy(str, "objdump -d a.out | awk -F\"\n\"");
+	strcat(str, " -v RS=\"\n\n\" '$1 ~ /main/' | cut -f 2");
 	system("gcc 100-main_opcodes.c");
-	system("objdump -d a.out | awk -F\"\n\" -v RS=\"\n\n\" '$1 ~ /main/' | cut -f 2 |");
+	system(str);
 	return (0);
 }
