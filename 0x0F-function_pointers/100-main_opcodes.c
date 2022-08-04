@@ -26,7 +26,13 @@ int main(int argc, char *argv[])
 		exit(2);
 	};
 	strcpy(str, "objdump -d a.out | awk -F\"\n\"");
-	strcat(str, " -v RS=\"\n\n\" '$1 ~ /main/' | cut -f 2");
+	strcat(str, " -v RS=\"\n\n\" '$1 ~ /main/' | cut -f 2 |");
+	strcat(str, " sed '1d'");
+	strcat(str, " | tr -d '\n\r ' | ");
+	strcat(str, "cut -c -$((2 * ");
+	strcat(str, argv[1]);
+	strcat(str, ")) | ");
+	strcat(str, "fold -w2 | paste -sd' '");
 	system("gcc 100-main_opcodes.c");
 	system(str);
 	return (0);
