@@ -10,9 +10,7 @@
  */
 void print_all(const char * const format, ...)
 {
-	size_t n = strlen(format), i = 0;
-	int var_int;
-	int is_valid = 0;
+	int n = (int) strlen(format), i = 0, var_int, int is_valid = 0;
 	char var_char, *var_str, f;
 	float var_float;
 	va_list args;
@@ -44,7 +42,7 @@ void print_all(const char * const format, ...)
 				var_str = va_arg(args, char *);
 				if (var_str == NULL)
 				{
-					printf("nil");
+					printf("(nil)");
 					is_valid = 1;
 					break;
 				}
@@ -53,7 +51,6 @@ void print_all(const char * const format, ...)
 				break;
 			default:
 				is_valid = 0;
-				break;
 		}
 		i++;
 	}
