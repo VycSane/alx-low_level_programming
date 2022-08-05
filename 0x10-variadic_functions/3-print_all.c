@@ -15,7 +15,7 @@ void print_all(const char * const format, ...)
 	va_list args;
 
 	va_start(args, format);
-	while (i < f_len)
+	while (i < f_len && format != NULL)
 	{
 		switch (format[i])
 		{
@@ -37,14 +37,13 @@ void print_all(const char * const format, ...)
 				}
 				printf("%s", var_str);
 		}
-		j = 0;
 		while (j < 4)
 		{
 			if (format[i] == sf[j] && (i < f_len - 1))
 				printf(", ");
 			j++;
 		}
-		i++;
+		j = 0, i++;
 	}
 	printf("\n");
 	va_end(args);
