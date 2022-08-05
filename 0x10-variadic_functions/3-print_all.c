@@ -40,7 +40,7 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (j < 4)
 		{
-			if (format[i] == sf[j])
+			if (format[i] == sf[j] && (i < f_len - 1))
 				printf(", ");
 			j++;
 		}
