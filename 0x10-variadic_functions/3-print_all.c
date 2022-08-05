@@ -17,6 +17,13 @@ void print_all(const char * const format, ...)
 	va_start(args, format);
 	while (i < f_len)
 	{
+		j = 0;
+		while (j < 4)
+		{
+			if (format[i] == sf[j] && (i < f_len - 1) && i != 0)
+				printf(", ");
+			j++;
+		}
 		switch (format[i])
 		{
 			case 'c':
@@ -36,13 +43,6 @@ void print_all(const char * const format, ...)
 					break;
 				}
 				printf("%s", var_str);
-		}
-		j = 0;
-		while (j < 4)
-		{
-			if (format[i] == sf[j] && (i < f_len - 1))
-				printf(", ");
-			j++;
 		}
 		i++;
 	}
