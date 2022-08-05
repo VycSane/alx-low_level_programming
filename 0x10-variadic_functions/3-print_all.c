@@ -17,6 +17,7 @@ void print_all(const char * const format, ...)
 	switch (format == NULL)
 	{
 		case 1:
+			printf("\n");
 			exit(0);
 	}
 	f_len = strlen(format);
