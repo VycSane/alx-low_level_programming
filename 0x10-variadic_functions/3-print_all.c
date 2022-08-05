@@ -10,12 +10,12 @@
  */
 void print_all(const char * const format, ...)
 {
-	size_t i = 0, j = 0, f_len = strlen(format);
+	size_t i = 0, j = 0, f_len = format && strlen(format);
 	char *var_str, *sf = "cfis";
 	va_list args;
 
 	va_start(args, format);
-	while (i < f_len && format != NULL)
+	while (i < f_len)
 	{
 		switch (format[i])
 		{
@@ -37,7 +37,7 @@ void print_all(const char * const format, ...)
 				}
 				printf("%s", var_str);
 		}
-		while (j < 4)
+		while (i < j)
 		{
 			if (format[i] == sf[j] && (i < f_len - 1))
 				printf(", ");
