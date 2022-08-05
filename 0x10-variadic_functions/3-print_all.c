@@ -14,13 +14,12 @@ void print_all(const char * const format, ...)
 	char *var_str, *sf = "cfis";
 	va_list args;
 
-	switch (format && strlen(format))
+	switch (format == NULL)
 	{
-		case 0:
-			exit(0);
 		case 1:
-			f_len = strlen(format);
+			exit(0);
 	}
+	f_len = strlen(format);
 	va_start(args, format);
 	while (i < f_len)
 	{
