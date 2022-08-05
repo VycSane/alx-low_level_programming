@@ -10,8 +10,8 @@
  */
 void print_all(const char * const format, ...)
 {
-	size_t i = 0, f_len = strlen(format);
-	char *var_str;
+	size_t i = 0, j = 0, f_len = strlen(format);
+	char *var_str, *sf = "cfis";
 	va_list args;
 
 	va_start(args, format);
@@ -36,6 +36,13 @@ void print_all(const char * const format, ...)
 					break;
 				}
 				printf("%s", var_str);
+		}
+		j = 0;
+		while (j < 4)
+		{
+			if (format[i] == sf[j])
+				printf(", ");
+			j++;
 		}
 		i++;
 	}
