@@ -10,7 +10,7 @@
  */
 void print_all(const char * const format, ...)
 {
-	size_t i = 0, j = 0, f_len;;
+	size_t i = 0, j = 0, f_len;
 	char *var_str, *sf = "cfis";
 	va_list args;
 
