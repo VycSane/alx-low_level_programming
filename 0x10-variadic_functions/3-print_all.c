@@ -3,6 +3,7 @@
 #include <stdarg.h>
 #include <stddef.h>
 #include <string.h>
+void print_separator(size_t i, size_t *j, size_t f_len, char f, char *sf);
 /**
  * print_all - prints anything.
  * @format: formats specified
@@ -44,15 +45,27 @@ void print_all(const char * const format, ...)
 				}
 				printf("%s", var_str);
 		}
-		j = 0;
-		while (j < 4)
-		{
-			if (format[i] == sf[j] && (i < f_len - 1))
-				printf(", ");
-			j++;
-		}
+		print_separator(i, &j, f_len, format[i], sf);
 		i++;
 	}
 	printf("\n");
 	va_end(args);
+}
+/**
+ * print_separator - prints separator
+ * @i: first arg
+ * @j: second arg
+ * @f_len: specifier length
+ * @f: format specifier
+ * @sf: valid specifier list
+ */
+void print_separator(size_t i, size_t *j, size_t f_len, char f, char *sf)
+{
+	while (*j < 4)
+	{
+		if (f == sf[*j] && (i < f_len - 1))
+			printf(", ");
+		*j = *j + 1;
+	}
+	*j = 0;
 }
