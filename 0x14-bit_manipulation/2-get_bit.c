@@ -5,6 +5,8 @@
  * get_bit - prints binary form of a decimal number
  * @n: the  number
  * @index: the index of the bit
+ *
+ * Return: the bit value at the index
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
