@@ -1,6 +1,4 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 /**
  * get_bit - prints binary form of a decimal number
  * @n: the  number
@@ -10,22 +8,19 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	char temp[2042];
-	unsigned int rem, i = 0;
-
-	if (n == 0)
+	int bit;
+	unsigned int count = 0;
+	unsigned long int n_copy = n;
+	
+	while (n_copy)
 	{
-		printf("0");
-		return (0);
+		n_copy >>= 1;
+		count++;
 	}
-	while (n > 0)
+	if (index < count)
 	{
-		rem = n % 2;
-		n /= 2;
-		temp[i++] = '0' + rem;
+		bit = (n >> index ) & 1;
+		return (bit);
 	}
-	temp[i] = '\0';
-	if (index >= strlen(temp))
-		return (-1);
-	return (temp[index] - '0');
+	return (-1);
 }
