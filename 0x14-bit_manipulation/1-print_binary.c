@@ -6,23 +6,19 @@
  */
 void print_binary(unsigned long int n)
 {
-	char temp[100];
-	unsigned int rem, i = 0, j = 0;
+	unsigned int i = 0;
+	unsigned long n_copy = n;
 
 	if (n == 0)
 		printf("0");
-	while (n > 0)
+	while (n_copy)
 	{
-		rem = n % 2;
-		n /= 2;
-		temp[i++] = '0' + rem;
-		j++;
+		n_copy >>= 1;
+		i++;
 	}
-	temp[i] = '\0';
-	while (j > 0)
+	while (i > 0)
 	{
-		printf("%c", temp[j - 1
-]);
-		j--;
+		printf("%ld", (n >> (i - 1)) & 1);
+		i--;
 	}
 }
