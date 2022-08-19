@@ -12,7 +12,10 @@ int set_bit(unsigned long int *n, unsigned int index)
 	unsigned long int n_copy = *n;
 
 	if (*n == 0 && index == 0)
+	{
+		*n = 1;
 		return (1);
+	}
 	while (n_copy)
 	{
 		n_copy >>= 1;
