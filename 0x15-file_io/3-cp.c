@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 		ws = write(fd_to, buffer, rs);
 		if (ws == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to);
 			exit(99);
 		}
 	} while (rs > 0);
