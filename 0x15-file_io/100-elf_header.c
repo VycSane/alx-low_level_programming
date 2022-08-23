@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	fd = open(argv[1], O_RDONLY);
-	rs = read(fd, buffer, 64);
+	read(fd, buffer, 64);
 	printf("%s\n", buffer);
 	close(fd);
 	return (0);
