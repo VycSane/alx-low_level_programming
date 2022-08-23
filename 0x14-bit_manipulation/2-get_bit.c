@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * get_bit - gets the bit at an index
  * @n: the  number
@@ -9,17 +10,11 @@
 int get_bit(unsigned long int n, unsigned int index)
 {
 	int bit;
-	unsigned int count = 0;
 	unsigned long int n_copy = n;
 
 	if (n == 0)
 		return (0);
-	while (n_copy)
-	{
-		n_copy >>= 1;
-		count++;
-	}
-	if (index < count)
+	if (index < (8 * sizeof(unsigned int)))
 	{
 		bit = (n >> index) & 1;
 		return (bit);
