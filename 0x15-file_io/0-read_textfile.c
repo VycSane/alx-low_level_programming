@@ -14,19 +14,34 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd, rs, ws;
-	char mem[letters];
+	char *mem = malloc(letters * sizeof(char));
 
-	if (filename == NULL)
+	if (mem == NULL)
 		return (0);
+	if (filename == NULL)
+	{
+		free(mem);
+		return (0);
+	}
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
+	{
+		free(mem);
 		return (0);
+	}
 	rs = read(fd, mem, letters);
 	mem[rs] = '\0';
 	if (rs == -1)
+	{
+		free(mem);
 		return (0);
+	}
 	ws = write(STDOUT_FILENO, mem, rs);
 	if (ws == -1)
+	{
+		free(mem);
 		return (0);
+	}
+	free(mem);
 	return (rs);
 }
