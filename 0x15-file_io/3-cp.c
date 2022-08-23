@@ -17,10 +17,11 @@ int main(int argc, char *argv[])
 {
 	int fd_to, fd_from, rs, ws;
 	char *to, *from, buffer[1024];
+
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit (97);
+		exit(97);
 	}
 	from = argv[1];
 	to = argv[2];
@@ -36,8 +37,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from);
 		exit(98);
 	}
-	do
-	{
+	do {
 		rs = read(fd_from, buffer, 1024);
 		if (rs == -1)
 		{
@@ -51,7 +51,21 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	} while (rs > 0);
-	close(fd_to);
-	close(fd_from);
+	close_file(fd_to);
+	close_file(fd_from);
 	return (0);
+}
+/**
+ * close_file - closes an open file
+ * @fd: file descriptor of the open file
+ */
+void close_file(int fd)
+{
+	int cs = close(fd);
+
+	if (cs == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
 }
