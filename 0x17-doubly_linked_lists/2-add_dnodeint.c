@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_dnodeint - calculates the length of a doubly linked-list
+ * add_dnodeint - adds node to the start of the list
  * @head: starting node
  * @n: the value to add to the list
  * Return: the address of the new element, or NULL if it failed
